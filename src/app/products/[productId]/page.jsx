@@ -1,6 +1,10 @@
+import { productItems } from "@/Data/product";
 import React from "react";
 
-function ProductDetail() {
+ async function ProductDetail({params}) {
+    const {productId} = await params;
+    const product = productItems.find(item=> item.id === productId);
+    console.log("product : " + product);
   return (
     <>
 <div class="bg-gray-100 dark:bg-gray-800 py-8">
@@ -20,19 +24,18 @@ function ProductDetail() {
                 </div>
             </div>
             <div class="md:flex-1 px-4">
-                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Product Name</h2>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                    ante justo. Integer euismod libero id mauris malesuada tincidunt.
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{product.product_name}</h2>
+                 <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+               
                 </p>
                 <div class="flex mb-4">
                     <div class="mr-4">
                         <span class="font-bold text-gray-700 dark:text-gray-300">Price:</span>
-                        <span class="text-gray-600 dark:text-gray-300">$29.99</span>
+                        <span class="text-gray-600 dark:text-gray-300"></span>
                     </div>
                     <div>
                         <span class="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
-                        <span class="text-gray-600 dark:text-gray-300">In Stock</span>
+                        <span class="text-gray-600 dark:text-gray-300"></span>
                     </div>
                 </div>
                 <div class="mb-4">

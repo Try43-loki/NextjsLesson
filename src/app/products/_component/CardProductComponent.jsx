@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 const CardProduct = ({ productItems }) => {
-  console.log("ProductItem : ",productItems);
     return (
+      
     <div className="h-screen">
       <section className="container mx-auto p-10 md:py-12 px-0 md:p-8 md:px-0">
         <section className="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 items-start ">
           {productItems.map((item) => (
+             
             <section
               key={item.id}
               className="flex flex-col justify-between p-5 h-[700px] py-5 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer rounded-lg"
@@ -54,8 +55,9 @@ const CardProduct = ({ productItems }) => {
               <p className="mb-5 line-clamp-3">{item.description}</p>
               <h2 className="font-semibold mb-5">{item.price}</h2>
               <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
-                <Link href="products/product-detail" />
+                <Link href={`products/${item.id}`} >
                 View Detail
+                </Link>
               </button>
             </section>
           ))}
