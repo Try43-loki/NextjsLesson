@@ -1,12 +1,13 @@
 import React from "react";
-import Link from "next/link";
-
-import CardProduct from "./_component/CardProductComponent.jsx";
-import { productItems } from "@/Data/product.js";
-const ProductPage = () => {
-  return(
-    <CardProduct productItems={productItems} />
-  )
-};
+import { getAllProductService } from "../../services/product.service";
+import CartProductComponent from "../products/_components/CardProductComponent";
+async function ProductPage() {
+  const products = await getAllProductService();
+  return (
+    <>
+      <CartProductComponent products={products} />;
+    </>
+  );
+}
 
 export default ProductPage;
