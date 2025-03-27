@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
+import { useCountStore } from "../lib/store";
 
 export const NavbarComponent = () => {
+  const { count, increment, decrement } = useCountStore();
   return (
     <>
       <nav className="bg-white border-gray-200 py-2.5 sticky top-0 z-50">
@@ -76,7 +79,7 @@ export const NavbarComponent = () => {
               </li>
               <li className="flex justify-center items-center gap-x-10">
                 <button className="border-2 border-purple-300 rounded-md px-3 py-1 bg-purple-100 text-purple-500">
-                  Card <span className="text-pink-600">00</span>
+                  Card <span className="text-pink-600">{count}</span>
                 </button>
                 <button className="border-2 border-purple-300 rounded-md px-3 py-1 bg-purple-100 text-purple-500">
                   Wishlist <span className="text-pink-600">00</span>

@@ -1,5 +1,6 @@
 "use client";
-import { useCountStore } from "@/store/store";
+
+import { useCountStore } from "../../../lib/store";
 
 export function CounterDisplayComponent() {
   const { count, increment, decrement } = useCountStore();
