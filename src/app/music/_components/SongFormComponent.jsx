@@ -61,7 +61,7 @@ export default function SongFormComponent() {
             {...register("genres")}
           />
           <span className="text-red-500 text-sm mt-4">
-            {errors?.genre?.message}
+            {errors?.genres?.message}
           </span>
         </div>
 
